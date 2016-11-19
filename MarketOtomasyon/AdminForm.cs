@@ -65,6 +65,7 @@ namespace MarketOtomasyon
         {
             var aranacakIfade = txbAra.Text;
             ListBoxDoldur(aranacakIfade);
+            //
         }
     }
 }
