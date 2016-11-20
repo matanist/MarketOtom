@@ -26,6 +26,7 @@ namespace MarketOtomasyon
                 {
                     siradakiForm.Show();
                 }
+               
             }
         }
         MarketDBEntities ent = new MarketDBEntities();
@@ -71,8 +72,20 @@ namespace MarketOtomasyon
         private void ekleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             KullaniciEkleDuzenle yeniForm = new KullaniciEkleDuzenle();
-            yeniForm.Show();
-            this.Hide();
+            yeniForm.ShowDialog();//Açılan yeni pencere bu formun üzerine gelir ve yeni pencere kapanmadan bu pencereye müdahale edilemez.
+           
+        }
+
+        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (Form siradakiForm in Application.OpenForms)
+            {
+                
+                if (siradakiForm.Name == "KullaniciEkleDuzenle")
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
