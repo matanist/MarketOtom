@@ -43,7 +43,7 @@
             this.btnKaydet.Location = new System.Drawing.Point(76, 198);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(138, 44);
-            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.TabIndex = 5;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
             // 
@@ -68,7 +68,7 @@
             this.txbSoyad.Location = new System.Drawing.Point(119, 67);
             this.txbSoyad.Name = "txbSoyad";
             this.txbSoyad.Size = new System.Drawing.Size(131, 24);
-            this.txbSoyad.TabIndex = 1;
+            this.txbSoyad.TabIndex = 2;
             // 
             // label2
             // 
@@ -85,7 +85,7 @@
             this.chkAdmin.Location = new System.Drawing.Point(120, 151);
             this.chkAdmin.Name = "chkAdmin";
             this.chkAdmin.Size = new System.Drawing.Size(68, 22);
-            this.chkAdmin.TabIndex = 3;
+            this.chkAdmin.TabIndex = 4;
             this.chkAdmin.Text = "Admin";
             this.chkAdmin.UseVisualStyleBackColor = true;
             // 
@@ -94,7 +94,7 @@
             this.txbKullaniciAdi.Location = new System.Drawing.Point(119, 110);
             this.txbKullaniciAdi.Name = "txbKullaniciAdi";
             this.txbKullaniciAdi.Size = new System.Drawing.Size(131, 24);
-            this.txbKullaniciAdi.TabIndex = 1;
+            this.txbKullaniciAdi.TabIndex = 3;
             // 
             // label3
             // 
@@ -119,7 +119,7 @@
             this.Controls.Add(this.txbAd);
             this.Controls.Add(this.btnKaydet);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KullaniciEkleDuzenle";
             this.Text = "KullaniciEkleDuzenle";
             this.ResumeLayout(false);

@@ -67,5 +67,12 @@ namespace MarketOtomasyon
             ListBoxDoldur(aranacakIfade);
             //
         }
+
+        private void ekleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KullaniciEkleDuzenle yeniForm = new KullaniciEkleDuzenle();
+            yeniForm.Show();
+            this.Hide();
+        }
     }
 }
