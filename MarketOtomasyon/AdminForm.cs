@@ -87,5 +87,37 @@ namespace MarketOtomasyon
                 }
             }
         }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstKullanicilar.SelectedIndex == -1) return;
+            var seciliKullaniciID = Convert.ToInt32(lstKullanicilar.SelectedValue);
+            var secim=MessageBox.Show("Emin misin","Uyarı!",MessageBoxButtons.OKCancel);
+            if (secim==DialogResult.Cancel)
+            {
+                MessageBox.Show("Kullanıcı tarafından iptal edildi");
+            }
+            else
+            {
+
+                ent.Kullanici.Remove(ent.Kullanici.FirstOrDefault(k => k.id == seciliKullaniciID));
+                MessageBox.Show(ent.SaveChanges()>0?"Kullanıcı silme işlemi başarılı":"Silinemedi");
+                ListBoxDoldur("");
+
+
+
+            }
+        }
+
+        private void duzenleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstKullanicilar.SelectedIndex == -1) return;
+            var duzenlenecekKullanici = (KullaniciView)(lstKullanicilar.SelectedItem);
+            VeriMerkezi.SeciliKullanici = duzenlenecekKullanici;
+            KullaniciEkleDuzenle yeniForm = new KullaniciEkleDuzenle();
+            yeniForm.Show();
+            this.Hide();
+            //MessageBox.Show(duzenlenecekKullanici.KAdAdSoyadYetki);
+        }
     }
 }

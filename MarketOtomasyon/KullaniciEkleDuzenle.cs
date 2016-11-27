@@ -27,10 +27,12 @@ namespace MarketOtomasyon
                     siradakiForm.Show();
                 }
             }
+            VeriMerkezi.SeciliKullanici = null;
         }
         MarketDBEntities ent = new MarketDBEntities();
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            //todo:Butonun text'inde Kaydet yazıyorsa yeni kullanıcı oluştursun. Aşağıdaki kodlar çalışsın. Ancak Düzenle yazıyorsa var olan kullanıcının (VeriMerkezindeki) özelliklerini veritabanından değiştirsin.
             Kullanici yeniKullanici = new Kullanici();
 
             if (ent.Kullanici.FirstOrDefault(k=>k.KullaniciAdi==txbKullaniciAdi.Text)!=null)
@@ -59,6 +61,25 @@ namespace MarketOtomasyon
                 }
             }
 
+        }
+
+        private void KullaniciEkleDuzenle_Load(object sender, EventArgs e)
+        {
+            if (VeriMerkezi.SeciliKullanici == null)
+            {
+                //bu durumda admin yeni kullanıcı eklemek istemiş...
+            }
+            else
+            {
+                //bu durumda admin var olan bir kullanıcıyı değiştirmek istemiş.
+                var duzenlenecekKullanici = ent.Kullanici.FirstOrDefault(k => k.id == VeriMerkezi.SeciliKullanici.id);
+                txbAd.Text = duzenlenecekKullanici.Ad;
+                txbSoyad.Text = duzenlenecekKullanici.Soyad;
+                txbKullaniciAdi.Text = duzenlenecekKullanici.KullaniciAdi;
+                txbSifre.Text = duzenlenecekKullanici.Sifre;
+                chkAdmin.Checked = duzenlenecekKullanici.Yetki == 1 ? true : false;
+                btnKaydet.Text = "Düzenle"; //butonun yazısına göre işlem yaptıracağımız için burada adını değiştiriyorum. Böylece butonda Düzenle yazıyorsa var olan bir kullanıcının özelliğini değiştirmemiz gerekiyor.
+            }
         }
     }
 }

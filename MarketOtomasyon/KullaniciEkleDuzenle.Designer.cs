@@ -144,6 +144,7 @@
             this.Name = "KullaniciEkleDuzenle";
             this.Text = "KullaniciEkleDuzenle";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.KullaniciEkleDuzenle_FormClosed);
+            this.Load += new System.EventHandler(this.KullaniciEkleDuzenle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
